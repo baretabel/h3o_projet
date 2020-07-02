@@ -13,8 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/home', 'MainController@home');
+<<<<<<< HEAD
 Route::post('/nouv', 'MainController@nouv_projet')->name('nouv');
 Route::post('/comp', 'MainController@competence')->name('comp');
 Route::post('/mat', 'MainController@materiel')->name('mat');
 Route::post('/act', 'MainController@acteur')->name('act');
 Route::post('/terr', 'MainController@territoire')->name('terr');
+=======
+
+>>>>>>> 7acc08665348e98051ccb016f23565620de34f7e

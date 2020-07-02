@@ -15,7 +15,11 @@ class CreateTerritoiresTable extends Migration
     {
         Schema::create('territoires', function (Blueprint $table) {
             $table->increments('id');
+<<<<<<< HEAD
             $table->integer('projet_id');
+=======
+            $table->integer('acteur_id');
+>>>>>>> 7acc08665348e98051ccb016f23565620de34f7e
             $table->integer('localite_id');
             $table->timestamps();
         });

@@ -1,11 +1,16 @@
 .form-cad{
     width:35%;
+<<<<<<< HEAD
     height: 100%;
+=======
+    background-color: #1675496b;
+>>>>>>> 7acc08665348e98051ccb016f23565620de34f7e
     padding: 50px; 
     border-radius: 7px;
     margin-bottom: 50px!important;
     margin: auto;
    
+<<<<<<< HEAD
 }
 .tetes{
     background-color: #4a524e6b!important;
@@ -309,4 +314,6 @@ label{
   }
 .inv{
     display: none;
+=======
+>>>>>>> 7acc08665348e98051ccb016f23565620de34f7e
 }
