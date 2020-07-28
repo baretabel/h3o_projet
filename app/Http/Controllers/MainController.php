@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Localite;
-<<<<<<< HEAD
 use App\Projet;
 use App\Acteur;
 use App\Territoire;
@@ -19,6 +18,9 @@ class MainController extends Controller
     public function home(){
         $localites = Localite::all();
         return view('forma',['localites'=> $localites]);
+    }
+    public function index(){
+        return view('index');
     }
     //Insert d'un nouveau projet dans la base de données
     public function nouv_projet(Request $request){
@@ -96,14 +98,4 @@ class MainController extends Controller
         $ressource->save();
         
     }
-=======
-
-class MainController extends Controller
-{
-    //
-    public function home(){
-        $localites = Localite::all();
-          return view('form',['localites'=> $localites]);
-      }
->>>>>>> 7acc08665348e98051ccb016f23565620de34f7e
 }

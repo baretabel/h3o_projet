@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTerritoiresTable extends Migration
+class CreateCompetencesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateTerritoiresTable extends Migration
      */
     public function up()
     {
-        Schema::create('territoires', function (Blueprint $table) {
+        Schema::create('competences', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('projet_id');
-            $table->integer('localite_id');
-            $table->timestamps();
+            $table->string('competence');
         });
     }
 
@@ -28,6 +26,6 @@ class CreateTerritoiresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('territoires');
+        Schema::dropIfExists('competences');
     }
 }

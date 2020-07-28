@@ -1,6 +1,8 @@
 @extends('layout.layout')
 
 @section('content')
+<img src="{{ asset('img/logo.png') }}"  alt="" class="center-block">
+
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">

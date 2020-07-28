@@ -73,7 +73,7 @@ function verif() {
     var role=$("#role").val();
     
     if ( acteur != '' &&  role != '') {
-        $("#n-act").replaceWith('<div id="n-act" style="color:skyblue"><i class="fas fa-plus fa-2x" onclick="nouv()"></i></div>');
+        $("#n-act").replaceWith('<div id="n-act" style="color:#fe0000"><i class="fas fa-plus fa-2x" onclick="nouv()"></i></div>');
     }
     
 }
@@ -106,7 +106,7 @@ function verif_c() {
     var competence=$("#competence").val();
     
     if (  competence != '' ) {
-        $("#n-comp").replaceWith('<div id="n-comp" style="color:skyblue"><i class="fas fa-plus fa-2x" onclick="nouv_c()"></i></div>');
+        $("#n-comp").replaceWith('<div id="n-comp" style="color:#fe0000"><i class="fas fa-plus fa-2x" onclick="nouv_c()"></i></div>');
     }
     
 }
@@ -121,7 +121,7 @@ function verif_m() {
     var materiel=$("#materiel").val();
     
     if (  materiel != '' ) {
-        $("#n-mat").replaceWith('<div id="n-mat" style="color:skyblue"><i class="fas fa-plus fa-2x" onclick="nouv_m()"></i></div>');
+        $("#n-mat").replaceWith('<div id="n-mat" style="color:#fe0000"><i class="fas fa-plus fa-2x" onclick="nouv_m()"></i></div>');
     }
     
 }

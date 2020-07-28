@@ -15,9 +15,10 @@ class CreateRessourcesTable extends Migration
     {
         Schema::create('ressources', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('projet_id');
+            $table->integer('projet_id')->nullable;
+            $table->integer('project_id')->nullable;
             $table->string('ressource');
-            $table->boolean('type');
+            $table->boolean('type')->nullable;
             $table->timestamps();
         });
     }

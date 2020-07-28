@@ -6,11 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-<<<<<<< HEAD
     <title>H3O-Nouveau Projet</title>
-=======
-    <title>La Serpe</title>
->>>>>>> 7acc08665348e98051ccb016f23565620de34f7e
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -23,13 +19,10 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-<<<<<<< HEAD
 <script src="https://kit.fontawesome.com/3d5a9919d3.js" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
 <script src="{{ asset('js/script.js') }}"></script>  
 <script src="{{ asset('js/script.js') }}"></script>    
-=======
->>>>>>> 7acc08665348e98051ccb016f23565620de34f7e
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -52,64 +45,7 @@
   <body>
    
     <div id="app">
-<<<<<<< HEAD
       
-=======
-      <nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0px !important">
-          <div class="container">
-              <div class="navbar-header">
-
-                  <!-- Collapsed Hamburger -->
-                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                      <span class="sr-only">Toggle Navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                  </button>
-
-                  <!-- Branding Image -->
-                  <a class="navbar-brand" href="/">
-                      Location Voiture
-                  </a>
-              </div>
-
-              <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                  <!-- Left Side Of Navbar -->
-                  <ul class="nav navbar-nav">
-                      &nbsp;
-                  </ul>
-
-                  <!-- Right Side Of Navbar -->
-                  <ul class="nav navbar-nav navbar-right">
-                      <!-- Authentication Links -->
-                      
-                          <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                 Plus  <span class="caret"></span>
-                              </a>
-
-                              <ul class="dropdown-menu" role="menu">
-                                  
-                                <li>
-                                  <a href="/new">Nouvelle voiture</a>
-                                </li>  
-
-                                  <li>
-                                    <a href="/car">Liste de voiture</a>
-                                  </li>
-                                  
-                                  
-                                  <li>
-                                    <a href="/list">Liste de réservation</a>
-                                  </li>
-                                  
-                              </ul>
-                          </li>
-                     
-                  </ul>
-              </div>
-          </div>
->>>>>>> 7acc08665348e98051ccb016f23565620de34f7e
       </nav>
 
   <div class="starter-template">
@@ -117,9 +53,5 @@
   </div>
 
 
-<<<<<<< HEAD
 <script src="{{ asset('js/app.js') }}"></script>
-=======
-<!--<script src="{{ asset('js/app.js') }}"></script>-->
->>>>>>> 7acc08665348e98051ccb016f23565620de34f7e
 </html>

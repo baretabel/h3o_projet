@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTerritoiresTable extends Migration
+class CreateFichesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateTerritoiresTable extends Migration
      */
     public function up()
     {
-        Schema::create('territoires', function (Blueprint $table) {
+        Schema::create('fiches', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('projet_id');
-            $table->integer('localite_id');
+            $table->integer('projet_id')->nullable();
+            $table->integer('project_id')->nullable();
+            $table->boolean('description')->nullable();
+            $table->text('commentaire')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateTerritoiresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('territoires');
+        Schema::dropIfExists('fiches');
     }
 }

@@ -12,13 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/home', 'MainController@home');
-<<<<<<< HEAD
+Route::get('/home', 'MainController@home')->name('home');
 Route::post('/nouv', 'MainController@nouv_projet')->name('nouv');
 Route::post('/comp', 'MainController@competence')->name('comp');
 Route::post('/mat', 'MainController@materiel')->name('mat');
 Route::post('/act', 'MainController@acteur')->name('act');
 Route::post('/terr', 'MainController@territoire')->name('terr');
-=======
 
->>>>>>> 7acc08665348e98051ccb016f23565620de34f7e
+Route::get('/', 'MainController@index');
