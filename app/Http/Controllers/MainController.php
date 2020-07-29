@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Fiche;
 
 use App\Localite;
 use App\Projet;
@@ -40,8 +41,20 @@ class MainController extends Controller
             $projet->created_at=$current_date_time;
             $projet->updated_at=$current_date_time;
             $projet->save();
+            $this->fiche();
+        }
+        public function fiche(){
+            $projet = Projet::select('id')->latest('id')->first();
+            $current_date_time = Carbon::now()->toDateTimeString();
+            
+            $fiche = new Fiche;
+            $fiche->projet_id=$projet->id;
+            $fiche->commentaire=null;
+            $fiche->created_at=$current_date_time;
+            $fiche->updated_at=$current_date_time;
+            $fiche->save();
         
-    }
+        }
     //Insert d'un territoire concerneé dans la table territoires
     public function territoire(Request $request){
         //recuperation id  du dernier projet créee
@@ -72,11 +85,11 @@ class MainController extends Controller
     }
     //Insert competence dans la table ressources
     public function competence(Request $request){
-        $projet = Projet::select('id')->latest('id')->first();
+        $fiche = Fiche::select('id')->latest('id')->first();
         $current_date_time = Carbon::now()->toDateTimeString();
 
         $ressource= new Ressource;
-        $ressource->projet_id= $projet->id;
+        $ressource->fiche_id= $fiche->id;
         $ressource->ressource= $request->competence;
         $ressource->type= false;
         $ressource->created_at=$current_date_time;
@@ -86,11 +99,11 @@ class MainController extends Controller
     }
     // Insert materiel dans la table ressource
     public function materiel(Request $request){
-        $projet = Projet::select('id')->latest('id')->first();
+        $fiche = Fiche::select('id')->latest('id')->first();
         $current_date_time = Carbon::now()->toDateTimeString();
 
         $ressource= new Ressource;
-        $ressource->projet_id= $projet->id;
+        $ressource->fiche_id= $fiche->id;
         $ressource->ressource= $request->materiel;
         $ressource->type = true;
         $ressource->created_at=$current_date_time;

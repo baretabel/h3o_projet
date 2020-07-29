@@ -16,4 +16,7 @@ class Projet extends Model
     public function territoire(){
         return $this->hasMany('App\Territoire');
     }
+    public function fiche(){
+        return $this->belongsTo('App\Fiche');
+    }
 }

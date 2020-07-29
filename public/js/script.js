@@ -64,6 +64,12 @@ $(document).ready(function(){
     $(".submit").click(function(){
         return false;
     })
+    $.ajaxSetup({
+        data: {
+            _token: $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    
     
     
 });
@@ -83,6 +89,33 @@ function valid_act(){
         $("#btn-act1").addClass("inv");
     
 }
+function valid_c(){
+    if($('input[name="competences[]"]:checked')){
+        $("#btn-per2").removeClass("inv");
+        $("#btn-per1").addClass("inv");
+    }else{
+        if($( ".flexible_c" ).length){
+            $("#btn-per2").removeClass("inv");
+            $("#btn-per1").addClass("inv");
+        }
+        else{
+            $("#btn-per1").removeClass("inv");
+            $("#btn-per2").addClass("inv");
+        } 
+    }
+}
+function valid_det(){var detail=$("#detail").val();
+    
+if (  detail != '' ) {
+        $("#btn-res3").removeClass("inv");
+        $("#btn-res1").addClass("inv");
+    }
+    else{
+        $("#btn-res1").removeClass("inv");
+        $("#btn-res3").addClass("inv");
+    } 
+
+}
 function valid_res(){
     if ($("div").hasClass("flexible_c") && $("div").hasClass("flexible_m")) {
         $("#btn-res2").removeClass("inv");
@@ -90,7 +123,6 @@ function valid_res(){
     }
         
     
-
 }
 function nouv() {
     var acteur=$("#act").val();
@@ -109,6 +141,18 @@ function verif_c() {
         $("#n-comp").replaceWith('<div id="n-comp" style="color:#fe0000"><i class="fas fa-plus fa-2x" onclick="nouv_c()"></i></div>');
     }
     
+}
+function verif_com() {
+    var competence=$("#competence").val();
+    
+    if (  competence != '' ) {
+        $("#n-comp").replaceWith('<div id="n-comp" style="color:#fe0000"><i class="fas fa-plus fa-2x" onclick="test()"></i></div>');
+    }
+    
+}
+function test(){
+    nouv_c();
+    valid_c();
 }
 function nouv_c() {
     var competence=$("#competence").val();
@@ -148,6 +192,21 @@ function valid_gen() {
         $("#btn-gen2").addClass("inv");
     }
 }
+function valid_gen2() {
+    var description=$("#description").val();
+    var projet=$("#projet").val();
+    var nom= $("#nom").val();
+    var prenom=$("#prenom").val();
+    var date=$("#date").val();
+
+    if ( description != '' &&  projet != '' &&  prenom != '' &&  date != '' && nom != ''){
+        $("#btn-gen2").removeClass("inv");
+        $("#btn-gen1").addClass("inv");
+    }else{
+        $("#btn-gen1").removeClass("inv");
+        $("#btn-gen2").addClass("inv");
+    }
+}
 function valid_per() {
     var debut=$("#debut").val();
     var fin=$("#fin").val();
@@ -161,6 +220,7 @@ function valid_per() {
         $("#btn-per2").addClass("inv");
     }
 }
+
 $('#btn-res2').click(function(){
     var debut=$("#debut").val();
     var fin=$("#fin").val();
@@ -188,6 +248,7 @@ $('#btn-res2').click(function(){
         }
     })
 });
+
 function ajout(){
     var debut=$("#debut").val();
     var fin=$("#fin").val();
@@ -273,4 +334,56 @@ function ajout(){
         }
          
      });
+}
+function ajouter(){
+        var description=$("#description").val();
+        var projet=$("#projet").val();
+        var nom= $("#nom").val();
+        var prenom=$("#prenom").val();
+        var date=$("#date").val();
+        var detail=$("#detail").val();
+    
+        $.ajax({
+            
+            method: $("#msform").attr('method'),
+            url: $("#msform").attr('action'),
+            data: {
+                description: description,
+                nom: nom,
+                projet: projet,
+                prenom: prenom,
+                date: date,
+                detail: detail,
+            },
+        })
+        $(".flexible_c").each(function(){
+            var competence = $(this).find(".competence").text();
+                 $.ajax({
+                     method: $("#msform").attr('method'),
+                     url: $("#r_comp").attr('action'),
+                     data: {
+                         competence: competence,
+                         
+                         
+                     }
+                 })
+             
+             
+         });
+         $(" input[type='checkbox']").each(function(){
+            if ($(this).is(":checked")) {
+            var competence = $(this).val();
+                 $.ajax({
+                     method: $("#msform").attr('method'),
+                     url: $("#r_comp").attr('action'),
+                     data: {
+                         competence: competence,
+                         
+                         
+                     }
+                 })
+            }
+             
+         });
+   
 }

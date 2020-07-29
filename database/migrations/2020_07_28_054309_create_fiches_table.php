@@ -17,7 +17,7 @@ class CreateFichesTable extends Migration
             $table->increments('id');
             $table->integer('projet_id')->nullable();
             $table->integer('project_id')->nullable();
-            $table->boolean('description')->nullable();
+            $table->boolean('validation')->nullable();
             $table->text('commentaire')->nullable();
             $table->timestamps();
         });

@@ -17,6 +17,7 @@ class CreateProjectsTable extends Migration
             $table->increments('id');
             $table->string('nom');
             $table->string('prenom');
+            $table->date('date');
             $table->string('nom_projet');
             $table->text('description');
             $table->text('but');
