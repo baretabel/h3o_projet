@@ -3,6 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Fiche;
+use App\Project;
+use App\Localite;
+use App\Projet;
+use App\Acteur;
+use App\Territoire;
+use App\Ressource;
+use Carbon\Carbon;
 
 class AdminController extends Controller
 {
@@ -13,7 +21,14 @@ class AdminController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function home(){
-        return view('dashboard');
+        $fiches = Fiche::all();
+        return view('dashboard',['fiches'=> $fiches]);
+    }
+    public function projet($id){
+        $fiches = Fiche::where('id', $id)->first();
+        
+        return view('projet',['fiches'=> $fiches]);
+        
     }
     public function __invoke(Request $request)
     {

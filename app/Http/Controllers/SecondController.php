@@ -50,6 +50,10 @@ public function fiche(){
     $fiche->created_at=$current_date_time;
     $fiche->updated_at=$current_date_time;
     $fiche->save();
+    
+    $fiche = Fiche::select('id')->latest('id')->first();
+            $project->fiche_id=$fiche->id;
+            $project->save();
 
 }
 public function competence(Request $request){

@@ -21,6 +21,6 @@ Route::post('/terr', 'MainController@territoire')->name('terr');
 Route::get('/v2/home', 'SecondController@home')->name('form');
 Route::post('/v2/nouv', 'SecondController@nouv_projet')->name('new');
 Route::post('/v2/comp', 'SecondController@competence')->name('com');
-
+Route::get('/projet/{id}', 'AdminController@projet')->name('projet');
 Route::get('/dashboard', 'AdminController@home')->name('admin');
 Route::get('/', 'MainController@index');

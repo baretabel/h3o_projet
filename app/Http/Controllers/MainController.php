@@ -53,6 +53,10 @@ class MainController extends Controller
             $fiche->created_at=$current_date_time;
             $fiche->updated_at=$current_date_time;
             $fiche->save();
+            
+            $fiche = Fiche::select('id')->latest('id')->first();
+            $projet->fiche_id=$fiche->id;
+            $projet->save();
         
         }
     //Insert d'un territoire concerneé dans la table territoires

@@ -282,7 +282,20 @@ label{
 }
 .fond-panel{
     background-color: #fe0000!important;
+    border-color: #ccc!important;
 }
+.card{
+    border: 1px solid;
+}
+.bout{
+    border-radius: 0px!important;
+    background-color: #fe0000!important;
+    color: #ffffff;
+}
+.panel-heading{
+    padding: 0px!important;
+}
+
 .flex{
     display:flex;
     justify-content: center;

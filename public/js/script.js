@@ -249,7 +249,7 @@ $('#btn-res2').click(function(){
     })
 });
 
-function ajout(){
+async function ajout(){
     var debut=$("#debut").val();
     var fin=$("#fin").val();
     var public=$("#public").val();
@@ -260,7 +260,7 @@ function ajout(){
     var livrable=$("#livrable").val();
     var nom= $("#nom").val();
 
-    $.ajax({
+    await $.ajax({
         method: $("#msform").attr('method'),
         url: $("#msform").attr('action'),
         data: {
@@ -276,7 +276,7 @@ function ajout(){
             public: public,
         }
     })
-    $(".flexible").each(function(){
+    await $(".flexible").each(function(){
        var acteur = $(this).find(".nom").text();
         var role=  $(this).find(".role").text();
             $.ajax({
@@ -292,7 +292,7 @@ function ajout(){
         
         
     });
-    $(".flexible_c").each(function(){
+    await $(".flexible_c").each(function(){
         var competence = $(this).find(".competence").text();
              $.ajax({
                  method: $("#msform").attr('method'),
@@ -307,7 +307,7 @@ function ajout(){
          
          
      });
-     $(".flexible_m").each(function(){
+     await $(".flexible_m").each(function(){
         var materiel = $(this).find(".materiel").text();
         $.ajax({
             method: $("#msform").attr('method'),
@@ -320,7 +320,7 @@ function ajout(){
          
          
      });
-     $(" input[type='checkbox']").each(function(){
+     await $(" input[type='checkbox']").each(function(){
          if ($(this).is(":checked")) {
             var localite_id = $(this).val();
             $.ajax({
@@ -335,7 +335,7 @@ function ajout(){
          
      });
 }
-function ajouter(){
+async function ajouter(){
         var description=$("#description").val();
         var projet=$("#projet").val();
         var nom= $("#nom").val();
@@ -343,7 +343,7 @@ function ajouter(){
         var date=$("#date").val();
         var detail=$("#detail").val();
     
-        $.ajax({
+        await $.ajax({
             
             method: $("#msform").attr('method'),
             url: $("#msform").attr('action'),
@@ -356,7 +356,7 @@ function ajouter(){
                 detail: detail,
             },
         })
-        $(".flexible_c").each(function(){
+        await $(".flexible_c").each(function(){
             var competence = $(this).find(".competence").text();
                  $.ajax({
                      method: $("#msform").attr('method'),
@@ -370,7 +370,7 @@ function ajouter(){
              
              
          });
-         $(" input[type='checkbox']").each(function(){
+        await $(" input[type='checkbox']").each(function(){
             if ($(this).is(":checked")) {
             var competence = $(this).val();
                  $.ajax({
